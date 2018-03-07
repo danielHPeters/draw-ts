@@ -7,10 +7,15 @@
 export default class PostFixCalculator {
   static VALID_INPUT = '^\\s*([-+]?)(\\d+)(?:\\s*\\s*([-+]?)(\\d+)\\s*([-+*\\/\\^]))+$'
 
-  static calculate (input: string): number {
+  /**
+   * Calculate a postfix expression
+   * @param {string} expression Postfix expression as string
+   * @returns {number} The result
+   */
+  static calculate (expression: string): number {
     let result = null
-    if (input.match(PostFixCalculator.VALID_INPUT)) {
-      let tokens = input.split(' ')
+    if (expression.match(PostFixCalculator.VALID_INPUT)) {
+      let tokens = expression.split(' ')
       let operation = []
 
       tokens.forEach(token => {
