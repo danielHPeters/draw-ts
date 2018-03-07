@@ -1,0 +1,59 @@
+$menuHeight: 40px
+$menuEntryWidth: 130px
+
+*
+  margin: 0
+  padding: 0
+
+body
+  padding: 50px
+  font: 28px "Lucida Grande", Helvetica, Arial, sans-serif
+
+canvas
+  position: absolute
+  top: 0
+  left: 0
+  background: transparent
+
+#menuBar
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: $menuHeight
+  background-color: #00B7FF
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+  a
+    width: 100%
+    height: $menuHeight
+    display: block
+    text-decoration: none
+    color: white
+  a:hover
+    color: black
+    background-color: white
+.submenu
+  display: inline-block
+  width: $menuEntryWidth
+  text-align: center
+  cursor: pointer
+.submenu:hover
+  .submenu-content
+    display: block
+.submenu-content
+  width: $menuEntryWidth
+  position: absolute
+  display: none
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+  z-index: 1
+ul
+  list-style-type: none
+
+.menuEntry
+  height: $menuHeight
+  width: $menuEntryWidth
+  cursor: pointer
+  background-color: #00B7FF
+  z-index: 3
+#pane
+  top: $menuHeight
