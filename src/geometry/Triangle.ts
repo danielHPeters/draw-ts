@@ -47,5 +47,4 @@ export default class Triangle implements Shape {
       context.stroke()
     }
   }
-
 }
