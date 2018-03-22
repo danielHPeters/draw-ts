@@ -5,9 +5,11 @@ import Triangle from '../geometry/Triangle'
 import Circle from '../geometry/Circle'
 import Smiley from '../geometry/Smiley'
 import Line from '../geometry/Line'
+import SVGShape from '../geometry/SVGShape'
+import Picture from '../lib/graphics/Picture'
 
 export enum ShapeType {
-  LINE, RECTANGLE, TRIANGLE, CIRCLE, SMILEY
+  LINE, RECTANGLE, TRIANGLE, CIRCLE, SMILEY, SVG
 }
 
 /**
@@ -44,6 +46,9 @@ export default class ShapeFactory {
         break
       case ShapeType.SMILEY:
         shape = new Smiley(start, end, color, fill)
+        break
+      case ShapeType.SVG:
+        shape = new SVGShape(start, end, color, fill, new Picture('/brushes/bird.svg'))
         break
       default:
         throw new Error('Invalid Shape Type!')

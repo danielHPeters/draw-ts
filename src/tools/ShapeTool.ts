@@ -72,7 +72,7 @@ export default class ShapeTool implements Tool {
    * @param context Canvas rendering context
    */
   renderAll (context): void {
-    this.history.forEach(line => line.render(context))
+    this.history.forEach(shape => shape.render(context))
   }
 
   /**

@@ -88,7 +88,7 @@ export default class MenuBar {
    * @returns {HTMLElement[]}
    */
   static createShapesMenu (settings): HTMLElement[] {
-    const tools = ['Line', 'Rectangle', 'Triangle', 'Circle', 'Smiley']
+    const tools = ['Line', 'Rectangle', 'Triangle', 'Circle', 'Smiley', 'Svg']
     const toolEntries = []
     tools.forEach(shape => {
       const menuEntry = document.createElement('li') as HTMLElement
