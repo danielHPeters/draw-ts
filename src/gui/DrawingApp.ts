@@ -1,4 +1,5 @@
 import Tool from '../interfaces/Tool'
+import { ToolID } from '../enum/ToolID'
 
 /**
  * Main application class.
@@ -10,7 +11,7 @@ export default class DrawingApp {
   private menuBar: HTMLElement
   private canvas: HTMLCanvasElement
   private context: CanvasRenderingContext2D
-  private toolBox: Tool[]
+  private toolBox: Map<ToolID, Tool>
   private activeTool: Tool
 
   /**
@@ -21,15 +22,14 @@ export default class DrawingApp {
    * @param {CanvasRenderingContext2D} context The context of the main canvas
    * @param {Tool} activeTool Drawing tool
    */
-  constructor (canvas: HTMLCanvasElement, menuBar: HTMLElement, context: CanvasRenderingContext2D, activeTool: Tool) {
+  constructor (canvas: HTMLCanvasElement, menuBar: HTMLElement, context: CanvasRenderingContext2D, toolBox: Map<ToolID, Tool>) {
     this.menuBar = menuBar
     this.canvas = canvas
     this.canvas.width = window.innerWidth
     this.canvas.height = window.innerHeight - this.menuBar.offsetHeight
     this.context = context
-    this.toolBox = []
-    this.activeTool = activeTool
-    this.toolBox.push(this.activeTool)
+    this.toolBox = toolBox
+    this.activeTool = this.toolBox.get(ToolID.SHAPE)
   }
 
   /**
