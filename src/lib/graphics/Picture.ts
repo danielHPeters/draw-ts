@@ -12,7 +12,7 @@ export default class Picture {
   /**
    * Constructor.
    *
-   * @param {string} src Image source url.
+   * @param src Image source url.
    */
   constructor (src: string) {
     this.loaded = false

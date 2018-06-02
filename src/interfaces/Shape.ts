@@ -17,10 +17,8 @@ export enum Color {
 /**
  * Regex for verifying hex-color formats.
  * Valid formats are: #000 or #000000.
- *
- * @type {string}
  */
-export const VALID_COLOR = '^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$'
+export const VALID_COLOR: string = '^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$'
 
 /**
  * Interface for drawing shapes.
@@ -37,7 +35,7 @@ export default interface Shape {
   /**
    * Draws the shape onto the canvas.
    *
-   * @param {CanvasRenderingContext2D} context Canvas rendering context
+   * @param context Canvas rendering context
    */
   render (context: CanvasRenderingContext2D): void
 }

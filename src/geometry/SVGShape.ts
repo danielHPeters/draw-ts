@@ -15,11 +15,11 @@ export default class SVGShape implements Shape {
   /**
    * Constructor.
    *
-   * @param {Point} start
-   * @param {Point} end
-   * @param {Color} color
-   * @param {boolean} fill
-   * @param {Picture} vectorImage
+   * @param start
+   * @param end
+   * @param color
+   * @param fill
+   * @param vectorImage
    */
   constructor (start: Point, end: Point, color: Color, fill: boolean, vectorImage: Picture) {
     this.start = start
@@ -31,7 +31,7 @@ export default class SVGShape implements Shape {
 
   /**
    *
-   * @param {CanvasRenderingContext2D} context
+   * @param context
    */
   render (context: CanvasRenderingContext2D): void {
     if (this.vectorImage.loaded) {

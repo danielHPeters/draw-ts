@@ -17,10 +17,10 @@ export default class DrawingApp {
   /**
    * Default constructor.
    *
-   * @param {HTMLCanvasElement} canvas Main drawing canvas
-   * @param {HTMLElement} menuBar menu Bar HTML element that displays options and tools
-   * @param {CanvasRenderingContext2D} context The context of the main canvas
-   * @param {Tool} activeTool Drawing tool
+   * @param canvas Main drawing canvas
+   * @param menuBar menu Bar HTML element that displays options and tools
+   * @param context The context of the main canvas
+   * @param toolBox Tools collection
    */
   constructor (canvas: HTMLCanvasElement, menuBar: HTMLElement, context: CanvasRenderingContext2D, toolBox: Map<ToolID, Tool>) {
     this.menuBar = menuBar

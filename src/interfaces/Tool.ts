@@ -33,15 +33,15 @@ export default interface Tool {
 
   /**
    *
-   * @param {CanvasRenderingContext2D} context
+   * @param context
    */
   renderAll (context: CanvasRenderingContext2D): void
 
   /**
    *
-   * @param {CanvasRenderingContext2D} context
-   * @param {number} width
-   * @param {number} height
+   * @param context
+   * @param width
+   * @param height
    */
   undo (context: CanvasRenderingContext2D, width: number, height: number): void
 }

@@ -12,10 +12,10 @@ export default class LinearFunction {
 
   /**
    *
-   * @param {number} x1
-   * @param {number} y1
-   * @param {number} x2
-   * @param {number} y2
+   * @param x1
+   * @param y1
+   * @param x2
+   * @param y2
    */
   constructor (x1: number, y1: number, x2: number, y2: number) {
     this.start = new Point(x1, y1)
@@ -24,7 +24,7 @@ export default class LinearFunction {
 
   /**
    *
-   * @returns {number}
+   * @returns
    */
   getSlope (): number {
     return (this.end.y - this.start.y) / (this.end.x - this.start.x)

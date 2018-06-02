@@ -11,8 +11,8 @@ export default class Point {
   /**
    * Default constructor.
    *
-   * @param {number} x initializes x value of this point
-   * @param {number} y initializes y value of this point
+   * @param x initializes x value of this point
+   * @param y initializes y value of this point
    */
   constructor (x: number, y: number) {
     this.x = x
@@ -22,10 +22,10 @@ export default class Point {
   /**
    * Set both x and y values.
    *
-   * @param {number} x x-axis value
-   * @param {number} y y-axis value
+   * @param x x-axis value
+   * @param y y-axis value
    */
-  public set (x: number, y: number): void {
+  set (x: number, y: number): void {
     this.x = x
     this.y = y
   }
@@ -33,9 +33,9 @@ export default class Point {
   /**
    * Set the x and y values of this point to the values of another point.
    *
-   * @param {Point} point Other point
+   * @param point Other point
    */
-  public setPoint (point: Point): void {
+  setPoint (point: Point): void {
     this.x = point.x
     this.y = point.y
   }
@@ -43,9 +43,9 @@ export default class Point {
   /**
    * Create a another Point object with the same value as this Point.
    *
-   * @returns {Point} A clone of this point
+   * @returns A clone of this point
    */
-  public clone (): Point {
+  clone (): Point {
     return new Point(this.x, this.y)
   }
 }

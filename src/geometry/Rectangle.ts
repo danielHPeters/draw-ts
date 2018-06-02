@@ -16,10 +16,10 @@ export default class Rectangle implements Shape {
   /**
    * Default constructor.
    *
-   * @param {Point} start Starting point of this shape
-   * @param {Point} end Ending point of this shape
-   * @param {Color} color The color of this shape
-   * @param {boolean} fill Flag determining whether this shape should be filled
+   * @param start Starting point of this shape
+   * @param end Ending point of this shape
+   * @param color The color of this shape
+   * @param fill Flag determining whether this shape should be filled
    */
   constructor (start: Point, end: Point, color: Color, fill: boolean) {
     this.start = start
@@ -31,7 +31,7 @@ export default class Rectangle implements Shape {
   /**
    * Draw this rectangle on the canvas.
    *
-   * @param {CanvasRenderingContext2D} context Drawing context
+   * @param context Drawing context
    */
   render (context: CanvasRenderingContext2D): void {
     context.beginPath()

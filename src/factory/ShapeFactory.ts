@@ -22,12 +22,12 @@ export default class ShapeFactory {
   /**
    * Generate a specified shape object.
    *
-   * @param {ShapeType} shapeType Type of the shape
-   * @param {Point} start Starting location
-   * @param {Point} end End location
-   * @param {Color} color Drawing color
-   * @param {boolean} fill Flag determining whether the shape should be filled
-   * @returns {Shape} The generated shapes
+   * @param shapeType Type of the shape
+   * @param start Starting location
+   * @param end End location
+   * @param color Drawing color
+   * @param fill Flag determining whether the shape should be filled
+   * @returns The generated shapes
    */
   static create (shapeType: ShapeType, start: Point, end: Point, color: Color, fill: boolean): Shape {
     let shape

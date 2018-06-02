@@ -12,7 +12,7 @@ export default class MatrixFactory {
    * Creates a matrix with an array.
    *
    * @param mArray The array used to create the matrix
-   * @returns {Matrix} The generated matrix object
+   * @returns The generated matrix object
    */
   static createMatrix (mArray): Matrix {
     const length = mArray[0].length

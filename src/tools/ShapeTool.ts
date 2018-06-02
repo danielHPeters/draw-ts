@@ -21,7 +21,7 @@ export default class ShapeTool implements Tool {
   /**
    * Default constructor.
    *
-   * @param {Settings} settings Application settings
+   * @param settings Application settings
    */
   constructor (settings: Settings) {
     this.start = new Point(0, 0)
@@ -78,9 +78,9 @@ export default class ShapeTool implements Tool {
   /**
    * Undo the drawing of the last shape by removing the last shape from the history and redrawing the canvas.
    *
-   * @param {CanvasRenderingContext2D} context Canvas rendering context
-   * @param {number} width Canvas width used to clear the whole canvas
-   * @param {number} height Canvas height used to clear the whole canvas
+   * @param context Canvas rendering context
+   * @param width Canvas width used to clear the whole canvas
+   * @param height Canvas height used to clear the whole canvas
    */
   undo (context: CanvasRenderingContext2D, width: number, height: number): void {
     if (this.history.length > 0) {

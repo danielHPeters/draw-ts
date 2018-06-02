@@ -1,15 +1,16 @@
+'use strict'
+
 const { CheckerPlugin } = require('awesome-typescript-loader')
 const path = require('path')
 
 module.exports = {
   entry: {
-    'draw': './src/draw.ts',
-    'draw.min': './src/draw.ts'
+    draw: './src/app.ts',
   },
   devtool: 'source-map',
   output: {
     path: path.join(__dirname, './public/javascripts'),
-    filename: '[name].js'
+    filename: '[name].min.js'
   },
   resolve: {
     // Add '.ts' and '.tsx' as a resolvable extension.

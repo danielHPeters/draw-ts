@@ -8,7 +8,7 @@ import Shape, { Color } from '../interfaces/Shape'
  * @version 1.0
  */
 export default class Settings {
-  activeColor
+  activeColor: Color
   activeTool: ShapeType
   menuHeight: number
   history: Shape[]
@@ -17,11 +17,11 @@ export default class Settings {
   /**
    * Default constructor.
    *
-   * @param {number} menuHeight Height of the top menu to calculate the drawing offset
-   * @param {Color} activeColor Currently used color for drawing
-   * @param {ShapeType} activeTool Currently active shape
+   * @param menuHeight Height of the top menu to calculate the drawing offset
+   * @param activeColor Currently used color for drawing
+   * @param activeTool Currently active shape
    */
-  constructor (menuHeight: number, activeColor = Color.BLACK, activeTool = ShapeType.LINE) {
+  constructor (menuHeight: number, activeColor: Color = Color.BLACK, activeTool: ShapeType = ShapeType.LINE) {
     this.activeColor = activeColor
     this.menuHeight = menuHeight
     this.activeTool = activeTool
