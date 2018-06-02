@@ -1,5 +1,4 @@
-# drawjs
+# draw-ts
+HTML5 canvas drawing web application.
 
-HTML5 canvas drawing webapplication. 
-
-You can currently draw circles, triangles, rectangles, lines and smileys
+You can currently draw circles, triangles, rectangles, lines and smileys.
