@@ -2,8 +2,8 @@ import DrawingApp from './gui/DrawingApp'
 import MenuBar from './gui/MenuBar'
 import Settings from './config/Settings'
 import ShapeTool from './tools/ShapeTool'
-import { ToolID } from './enum/ToolID'
-import Tool from './interfaces/Tool'
+import { ToolID } from './tools/ToolID'
+import Tool from './tools/Tool'
 
 /**
  * Entry script of the web application.

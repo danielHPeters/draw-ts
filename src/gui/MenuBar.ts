@@ -1,6 +1,6 @@
-import { Color, VALID_COLOR } from '../interfaces/Shape'
+import { Color, VALID_COLOR } from '../geometry/Shape'
 import { ShapeType } from '../factory/ShapeFactory'
-import Tool from '../interfaces/Tool'
+import Tool from '../tools/Tool'
 import Settings from '../config/Settings'
 
 /**

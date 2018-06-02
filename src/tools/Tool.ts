@@ -1,5 +1,5 @@
 import Settings from '../config/Settings'
-import Shape from './Shape'
+import Shape from '../geometry/Shape'
 
 /**
  * Interface for drawing Tools.

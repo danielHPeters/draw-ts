@@ -1,5 +1,5 @@
 import Point from '../lib/math/Point'
-import Shape, { Color } from '../interfaces/Shape'
+import Shape, { Color } from './Shape'
 
 /**
  * Line shape to be drawn on a canvas element.

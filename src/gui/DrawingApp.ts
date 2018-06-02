@@ -1,5 +1,5 @@
-import Tool from '../interfaces/Tool'
-import { ToolID } from '../enum/ToolID'
+import Tool from '../tools/Tool'
+import { ToolID } from '../tools/ToolID'
 
 /**
  * Main application class.

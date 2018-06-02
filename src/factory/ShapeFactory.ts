@@ -1,4 +1,4 @@
-import Shape, { Color } from '../interfaces/Shape'
+import Shape, { Color } from '../geometry/Shape'
 import Point from '../lib/math/Point'
 import Rectangle from '../geometry/Rectangle'
 import Triangle from '../geometry/Triangle'

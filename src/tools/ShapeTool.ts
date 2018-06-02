@@ -1,7 +1,7 @@
 import Point from '../lib/math/Point'
 import Settings from '../config/Settings'
-import Tool from '../interfaces/Tool'
-import Shape from '../interfaces/Shape'
+import Tool from './Tool'
+import Shape from '../geometry/Shape'
 import ShapeFactory from '../factory/ShapeFactory'
 
 /**
