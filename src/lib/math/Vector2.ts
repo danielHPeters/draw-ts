@@ -1,12 +1,15 @@
+import Vector from './Vector'
+import Cloneable from '../util/Cloneable'
+
 /**
  * 2D vector implementation.
  *
  * @author Daniel Peters
  * @version 1.0
  */
-export default class Vector2 {
-  private x: number
-  private y: number
+export default class Vector2 implements Vector, Cloneable {
+  x: number
+  y: number
 
   /**
    * Default constructor. Sets x and y values.
@@ -68,6 +71,31 @@ export default class Vector2 {
   }
 
   /**
+   * Calculate distance between two vectors.
+   *
+   * @param start
+   * @param destination
+   * @returns
+   */
+  static distance (start: Vector2, destination: Vector2): number {
+    return Math.sqrt(Math.pow(destination.x - start.x, 2) + Math.pow(destination.y - start.y, 2))
+  }
+
+  /**
+   * Calculate linear interpolation between to vectors.
+   *
+   * @param start
+   * @param destination
+   * @param n
+   */
+  static lerp (start: Vector2, destination: Vector2, n: number): Vector2 {
+    return new Vector2(
+      (1 - n) * start.x + n * destination.x,
+      (1 - n) * start.y + n * destination.y
+    )
+  }
+
+  /**
    * Set vector with both x and y values.
    *
    * @param x New x value
@@ -81,7 +109,7 @@ export default class Vector2 {
   /**
    * Set vector location to another vector.
    *
-   * @param vector other vector
+   * @param vector Other vector
    */
   setVector (vector: Vector2): void {
     this.x = vector.x
@@ -166,7 +194,7 @@ export default class Vector2 {
   /**
    * Negate the x and y values of this vector and return the result as a new Vector2 object.
    *
-   * @returns Negated vector.
+   * @returns
    */
   negative (): Vector2 {
     return new Vector2(-this.x, -this.y)
@@ -208,15 +236,42 @@ export default class Vector2 {
    * Get the dot product between this vector and another vector.
    *
    * @param vector
-   * @returns The dot product of this vector and the one passed as param.
+   * @returns The dot product of this vector and the one passed as param
    */
   dot (vector: Vector2): number {
     return this.x * vector.x + this.y * vector.y
   }
 
-  floor (): void {
+  floor (): Vector2 {
     this.x = Math.floor(this.x)
-    this.x = Math.floor(this.x)
+    this.y = Math.floor(this.y)
+    return this
+  }
+
+  ceil (): void {
+    this.x = Math.ceil(this.x)
+    this.y = Math.ceil(this.y)
+  }
+
+  round (): Vector2 {
+    this.x = Math.round(this.x)
+    this.y = Math.round(this.y)
+    return this
+  }
+
+  /**
+   * Linear interpolation method.
+   *
+   * @param {Vector2} vector Destination vector.
+   * @param {number} n Normal value
+   */
+  lerp (vector: Vector2, n: number): void {
+    this.x = (1 - n) * this.x + n * vector.x
+    this.y = (1 - n) * this.y + n * vector.y
+  }
+
+  equals (vector: Vector2): boolean {
+    return this.x === vector.x && this.y === vector.y
   }
 
   /**

@@ -1,5 +1,6 @@
 import Point from '../lib/math/Point'
-import Shape, { Color } from './Shape'
+import Shape from './Shape'
+import Color from '../lib/util/Color'
 
 /**
  * Line shape to be drawn on a canvas element.
@@ -35,7 +36,7 @@ export default class Line implements Shape {
    */
   render (context: CanvasRenderingContext2D): void {
     context.beginPath()
-    context.strokeStyle = this.color
+    context.strokeStyle = this.color.value
     context.moveTo(this.start.x, this.start.y)
     context.lineTo(this.end.x, this.end.y)
     context.stroke()

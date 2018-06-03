@@ -1,5 +1,6 @@
-import Shape, { Color } from './Shape'
+import Shape from './Shape'
 import Point from '../lib/math/Point'
+import Color from '../lib/util/Color'
 
 /**
  * Circle shape to be drawn on a canvas.
@@ -37,10 +38,10 @@ export default class Circle implements Shape {
     const radius = Math.abs(this.end.x - this.start.x)
     if (radius !== 0) {
       context.beginPath()
-      context.strokeStyle = this.color
+      context.strokeStyle = this.color.value
       context.arc(this.start.x, this.start.y, radius, 0, Math.PI * 2, true)
       if (this.fill) {
-        context.fillStyle = this.color
+        context.fillStyle = this.color.value
         context.fill()
       } else {
         context.stroke()

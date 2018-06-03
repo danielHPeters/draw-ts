@@ -1,4 +1,4 @@
-import Shape, { Color } from '../geometry/Shape'
+import Shape from '../geometry/Shape'
 import Point from '../lib/math/Point'
 import Rectangle from '../geometry/Rectangle'
 import Triangle from '../geometry/Triangle'
@@ -7,6 +7,7 @@ import Smiley from '../geometry/Smiley'
 import Line from '../geometry/Line'
 import SVGShape from '../geometry/SVGShape'
 import Picture from '../lib/graphics/Picture'
+import Color from '../lib/util/Color'
 
 export enum ShapeType {
   LINE, RECTANGLE, TRIANGLE, CIRCLE, SMILEY, SVG

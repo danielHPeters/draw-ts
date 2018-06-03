@@ -1,5 +1,6 @@
 import { ShapeType } from '../factory/ShapeFactory'
-import Shape, { Color } from '../geometry/Shape'
+import Shape from '../geometry/Shape'
+import Color from '../lib/util/Color'
 
 /**
  * Default application settings configuration.

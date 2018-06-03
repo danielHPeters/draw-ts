@@ -1,5 +1,6 @@
-import Shape, { Color } from './Shape'
+import Shape from './Shape'
 import Point from '../lib/math/Point'
+import Color from '../lib/util/Color'
 
 /**
  * Triangle shape to be drawn on a canvas object.
@@ -35,8 +36,8 @@ export default class Triangle implements Shape {
    */
   render (context: CanvasRenderingContext2D): void {
     context.beginPath()
-    context.strokeStyle = this.color
-    context.fillStyle = this.color
+    context.strokeStyle = this.color.value
+    context.fillStyle = this.color.value
     context.moveTo(this.start.x, this.start.y)
     context.lineTo(this.start.x, this.end.y)
     context.lineTo(this.end.x, this.start.y)

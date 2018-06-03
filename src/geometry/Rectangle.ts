@@ -1,5 +1,6 @@
 import Point from '../lib/math/Point'
-import Shape, { Color } from './Shape'
+import Shape from './Shape'
+import Color from '../lib/util/Color'
 
 /**
  * Rectangle shape to be drawn on a canvas.
@@ -37,10 +38,10 @@ export default class Rectangle implements Shape {
     context.beginPath()
     context.rect(this.start.x, this.start.y, this.end.x - this.start.x, this.end.y - this.start.y)
     if (this.fill) {
-      context.fillStyle = this.color
+      context.fillStyle = this.color.value
       context.fill()
     } else {
-      context.strokeStyle = this.color
+      context.strokeStyle = this.color.value
       context.stroke()
     }
   }

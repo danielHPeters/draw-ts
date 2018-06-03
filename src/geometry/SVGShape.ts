@@ -1,6 +1,7 @@
-import Shape, { Color } from './Shape'
+import Shape from './Shape'
 import Point from '../lib/math/Point'
 import Picture from '../lib/graphics/Picture'
+import Color from '../lib/util/Color'
 
 /**
  * Brush that uses an svg image to draw.
@@ -29,10 +30,6 @@ export default class SVGShape implements Shape {
     this.vectorImage = vectorImage
   }
 
-  /**
-   *
-   * @param context
-   */
   render (context: CanvasRenderingContext2D): void {
     if (this.vectorImage.loaded) {
       context.drawImage(this.vectorImage.img, this.start.x, this.start.y)

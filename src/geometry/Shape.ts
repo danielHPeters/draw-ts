@@ -1,24 +1,5 @@
 import Point from '../lib/math/Point'
-
-/**
- * Basic hex-color enum.
- *
- * @author Daniel Peters
- * @version 1.0
- */
-export enum Color {
-  RED = '#FF0000',
-  GREEN = '#00FF00',
-  BLUE = '#0000FF',
-  YELLOW = '#FFFF00',
-  BLACK = '#000000'
-}
-
-/**
- * Regex for verifying hex-color formats.
- * Valid formats are: #000 or #000000.
- */
-export const VALID_COLOR: string = '^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$'
+import Color from '../lib/util/Color'
 
 /**
  * Interface for drawing shapes.

@@ -1,5 +1,6 @@
-import Shape, { Color } from './Shape'
+import Shape from './Shape'
 import Point from '../lib/math/Point'
+import Color from '../lib/util/Color'
 
 /**
  * Smiley Shape to draw on the canvas element.
@@ -36,7 +37,7 @@ export default class Smiley implements Shape {
   render (context: CanvasRenderingContext2D): void {
     const radius = Math.abs(this.end.x - this.start.x)
     context.beginPath()
-    context.strokeStyle = this.color
+    context.strokeStyle = this.color.value
     context.arc(this.start.x, this.start.y, radius, 0, Math.PI * 2, true) // Outer circle
     context.moveTo(this.start.x + (radius * 0.7), this.start.y)
     context.arc(this.start.x, this.start.y, radius * 0.7, 0, Math.PI, false)  // Mouth (clockwise)

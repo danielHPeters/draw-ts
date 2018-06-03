@@ -1,7 +1,7 @@
-import { Color, VALID_COLOR } from '../geometry/Shape'
 import { ShapeType } from '../factory/ShapeFactory'
 import Tool from '../tools/Tool'
 import Settings from '../config/Settings'
+import Color from '../lib/util/Color'
 
 /**
  * Menu bar at the top of the web app.
@@ -23,6 +23,7 @@ export default class MenuBar {
     const entryText = 'Undo'
     const menuEntry = document.createElement('li') as HTMLElement
     const menuLink = document.createElement('a')
+
     menuLink.setAttribute('href', '#')
     menuLink.setAttribute('id', entryText.toLowerCase())
     menuLink.appendChild(document.createTextNode(entryText))
@@ -38,6 +39,7 @@ export default class MenuBar {
   static createColorMenu (settings: Settings): HTMLElement[] {
     const colors = ['Red', 'Black', 'Blue', 'Yellow']
     const colorEntries = []
+
     colors.forEach(color => {
       const menuEntry = document.createElement('li') as HTMLElement
       const menuLink = document.createElement('a')
@@ -54,11 +56,10 @@ export default class MenuBar {
 
     const colorForm = document.createElement('form')
     const colorInput = document.createElement('input') as HTMLInputElement
+
     colorInput.setAttribute('type', 'color')
-    colorInput.setAttribute('accept', VALID_COLOR)
-    colorInput.addEventListener('change', () => {
-      settings.activeColor = colorInput.value
-    })
+    colorInput.setAttribute('accept', Color.VALID_COLOR)
+    colorInput.addEventListener('change', () => settings.activeColor = new Color(colorInput.value))
     colorForm.appendChild(colorInput)
     colorForm.classList.add('menuEntry')
     colorEntries.push(colorForm)
@@ -68,6 +69,7 @@ export default class MenuBar {
   static createShapesMenu (settings): HTMLElement[] {
     const tools = ['Line', 'Rectangle', 'Triangle', 'Circle', 'Smiley', 'Svg']
     const toolEntries = []
+
     tools.forEach(shape => {
       const menuEntry = document.createElement('li') as HTMLElement
       const menuLink = document.createElement('a')
@@ -89,6 +91,7 @@ export default class MenuBar {
     const entryText = 'Fill'
     const menuEntry = document.createElement('li') as HTMLElement
     const menuInput = document.createElement('input')
+
     menuInput.setAttribute('type', 'checkbox')
     menuInput.setAttribute('id', entryText.toLowerCase())
     menuEntry.appendChild(document.createTextNode(entryText))
@@ -111,6 +114,7 @@ export default class MenuBar {
   addMenu (title: string, entries: HTMLElement[] = []): void {
     let submenu = document.createElement('li') as HTMLElement
     let menuLink = document.createElement('a')
+
     menuLink.setAttribute('href', '#')
     menuLink.appendChild(document.createTextNode(title))
     submenu.appendChild(menuLink)
