@@ -5,15 +5,10 @@ import Color from '../lib/util/Color'
 /**
  * Circle shape to be drawn on a canvas.
  *
- * @author Daniel Peters
+ * @author Daniel Peters <daniel.peters.ch@gmail.com>
  * @version 1.0
  */
 export default class Circle implements Shape {
-  start: Point
-  end: Point
-  color: Color
-  fill: boolean
-
   /**
    * Default constructor.
    *
@@ -22,12 +17,7 @@ export default class Circle implements Shape {
    * @param color The color of this shape
    * @param fill Flag determining whether this shape should be filled
    */
-  constructor (start: Point, end: Point, color: Color, fill: boolean) {
-    this.start = start
-    this.end = end
-    this.color = color
-    this.fill = fill
-  }
+  constructor (public start: Point, public end: Point, public color: Color, public fill: boolean) {}
 
   /**
    * Draws the circle on a canvas.

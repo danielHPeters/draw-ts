@@ -4,13 +4,13 @@ import { ToolID } from '../tools/ToolID'
 /**
  * Main application class.
  *
- * @author Daniel Peters
+ * @author Daniel Peters <daniel.peters.ch@gmail.com>
  * @version 1.0
  */
 export default class DrawingApp {
   private menuBar: HTMLElement
   private canvas: HTMLCanvasElement
-  private context: CanvasRenderingContext2D
+  private readonly context: CanvasRenderingContext2D
   private toolBox: Map<ToolID, Tool>
   private activeTool: Tool
 

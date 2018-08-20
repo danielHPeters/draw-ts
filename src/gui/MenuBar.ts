@@ -6,12 +6,12 @@ import Color from '../lib/util/Color'
 /**
  * Menu bar at the top of the web app.
  *
- * @author Daniel Peters
+ * @author Daniel Peters <daniel.peters.ch@gmail.com>
  * @version 1.0
  */
 export default class MenuBar {
   private element: HTMLElement
-  private submenus: HTMLElement[]
+  private readonly submenus: HTMLElement[]
 
   constructor (element: HTMLElement) {
     this.element = element

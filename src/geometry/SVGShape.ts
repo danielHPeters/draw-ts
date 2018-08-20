@@ -5,14 +5,11 @@ import Color from '../lib/util/Color'
 
 /**
  * Brush that uses an svg image to draw.
+ *
+ * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @version 1.0
  */
 export default class SVGShape implements Shape {
-  start: Point
-  end: Point
-  color: Color
-  fill: boolean
-  vectorImage: Picture
-
   /**
    * Constructor.
    *
@@ -22,13 +19,7 @@ export default class SVGShape implements Shape {
    * @param fill
    * @param vectorImage
    */
-  constructor (start: Point, end: Point, color: Color, fill: boolean, vectorImage: Picture) {
-    this.start = start
-    this.end = end
-    this.color = color
-    this.fill = fill
-    this.vectorImage = vectorImage
-  }
+  constructor (public start: Point, public end: Point, public color: Color, public fill: boolean, public vectorImage: Picture) {}
 
   render (context: CanvasRenderingContext2D): void {
     if (this.vectorImage.loaded) {
