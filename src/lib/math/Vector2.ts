@@ -4,7 +4,7 @@ import Cloneable from '../util/Cloneable'
 /**
  * 2D vector implementation.
  *
- * @author Daniel Peters
+ * @author Daniel Peters <daniel.peters.ch@gmail.com>
  * @version 1.0
  */
 export default class Vector2 implements Vector, Cloneable {

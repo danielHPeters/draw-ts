@@ -8,6 +8,9 @@ import Tool from './tools/Tool'
 /**
  * Entry script of the web application.
  * Initializes the drawing context and the menu bar.
+ *
+ * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @version 1.0
  */
 document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.getElementById('pane') as HTMLCanvasElement

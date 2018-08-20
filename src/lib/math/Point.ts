@@ -1,7 +1,7 @@
 /**
  * Class Representing a Coordinate (x|y) on the canvas.
  *
- * @author Daniel Peters
+ * @author Daniel Peters <daniel.peters.ch@gmail.com>
  * @version 1.0
  */
 export default class Point {
