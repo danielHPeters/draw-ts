@@ -24,7 +24,7 @@ module.exports = {
         loader: 'awesome-typescript-loader',
         exclude: [
           '/node_modules/',
-          '**/*.spec.ts'
+          '/**/*.spec.ts'
         ]
       }
     ]
