@@ -5,7 +5,7 @@ import Color from '../lib/util/Color'
 /**
  * Default application settings configuration.
  *
- * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @author Daniel Peters
  * @version 1.0
  */
 export default class Settings {

@@ -1,7 +1,7 @@
 /**
  * Color class holding hex value of color.
  *
- * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @author Daniel Peters
  * @version 1.0
  */
 export default class Color {
@@ -14,7 +14,7 @@ export default class Color {
    * Regex for verifying hex-color formats.
    * Valid formats are: #000 or #000000.
    */
-  static readonly VALID_COLOR = '^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$'
+  static readonly VALID_COLOR: string = '^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$'
 
   value: string
 
@@ -23,6 +23,6 @@ export default class Color {
   }
 
   static validate (value: string): boolean {
-    return false
+    return new RegExp(Color.VALID_COLOR).test(value)
   }
 }

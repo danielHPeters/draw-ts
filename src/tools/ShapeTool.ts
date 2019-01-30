@@ -7,7 +7,7 @@ import ShapeFactory from '../factory/ShapeFactory'
 /**
  * Tool to draw history on the canvas.
  *
- * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @author Daniel Peters
  * @version 1.0
  */
 export default class ShapeTool implements Tool {
@@ -38,7 +38,7 @@ export default class ShapeTool implements Tool {
    *
    * @param event Mouse click event
    */
-  click (event): void {
+  click (event: MouseEvent): void {
     this.down = true
     this.start.set(event.clientX, event.clientY - this.settings.menuHeight)
   }
@@ -49,7 +49,7 @@ export default class ShapeTool implements Tool {
    *
    * @param event Mouse move event
    */
-  move (event): void {
+  move (event: MouseEvent): void {
     if (!this.down) return
     this.tempShape = ShapeFactory.create(this.settings.activeTool, this.start, this.end, this.settings.activeColor, this.settings.fill)
     this.tempShape.end.set(event.clientX, event.clientY - this.settings.menuHeight)
@@ -61,7 +61,7 @@ export default class ShapeTool implements Tool {
    *
    * @param event Mouse release event
    */
-  release (event): void {
+  release (event: MouseEvent): void {
     this.end.set(event.clientX, event.clientY - this.settings.menuHeight)
     this.history.push(ShapeFactory.create(this.settings.activeTool, this.start.clone(), this.end.clone(), this.settings.activeColor, this.settings.fill))
     this.down = false
@@ -71,7 +71,7 @@ export default class ShapeTool implements Tool {
    * Draw all shapes on the canvas.
    * @param context Canvas rendering context
    */
-  renderAll (context): void {
+  renderAll (context: CanvasRenderingContext2D): void {
     this.history.forEach(shape => shape.render(context))
   }
 

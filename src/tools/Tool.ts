@@ -4,7 +4,7 @@ import Shape from '../geometry/Shape'
 /**
  * Interface for drawing Tools.
  *
- * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @author Daniel Peters
  * @version 1.0
  */
 export default interface Tool {
@@ -17,19 +17,19 @@ export default interface Tool {
    *
    * @param event
    */
-  click (event): void
+  click (event: MouseEvent): void
 
   /**
    *
    * @param event
    */
-  move (event): void
+  move (event: MouseEvent): void
 
   /**
    *
    * @param event
    */
-  release (event): void
+  release (event: MouseEvent): void
 
   /**
    *

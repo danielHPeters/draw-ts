@@ -5,7 +5,7 @@ import Color from '../lib/util/Color'
 /**
  * Triangle shape to be drawn on a canvas object.
  *
- * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @author Daniel Peters
  * @version 1.0
  */
 export default class Triangle implements Shape {

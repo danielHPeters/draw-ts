@@ -1,59 +1,79 @@
-$menuHeight: 40px
-$menuEntryWidth: 130px
+$menu-height: 40px
+$menu-entry-width: 130px
+$menu-background-color: #00b7ff
+$link-color: #fff
+$link-hover-color: #000
+$link-hover-background-color: #fff
+$card-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2)
+
+html
+  box-sizing: border-box
 
 *
+  box-sizing: inherit
   margin: 0
   padding: 0
 
+  &::before,
+  &::after
+    box-sizing: inherit
+
 body
+  font: 28px 'Lucida Grande', Helvetica, Arial, sans-serif
   padding: 50px
-  font: 28px "Lucida Grande", Helvetica, Arial, sans-serif
 
 canvas
-  position: absolute
-  top: 0
-  left: 0
   background: transparent
-
-#menuBar
+  left: 0
   position: absolute
   top: 0
+
+.menu-bar
+  background-color: $menu-background-color
+  box-shadow: $card-shadow
+  height: $menu-height
   left: 0
-  width: 100%
-  height: $menuHeight
-  background-color: #00B7FF
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
-  a
-    width: 100%
-    height: $menuHeight
-    display: block
-    text-decoration: none
-    color: white
-  a:hover
-    color: black
-    background-color: white
-.submenu
-  display: inline-block
-  width: $menuEntryWidth
-  text-align: center
-  cursor: pointer
-.submenu:hover
-  .submenu-content
-    display: block
-.submenu-content
-  width: $menuEntryWidth
   position: absolute
+  top: 0
+  width: 100%
+
+  a
+    color: $link-color
+    display: block
+    height: $menu-height
+    text-decoration: none
+    width: 100%
+
+    &:hover
+      background-color: $link-hover-background-color
+      color: $link-hover-color
+
+.submenu
+  cursor: pointer
+  display: inline-block
+  text-align: center
+  width: $menu-entry-width
+
+  &:hover
+    .submenu-content
+      display: block
+
+.submenu-content
+  box-shadow: $card-shadow
   display: none
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+  position: absolute
+  width: $menu-entry-width
   z-index: 1
+
 ul
   list-style-type: none
 
-.menuEntry
-  height: $menuHeight
-  width: $menuEntryWidth
+.menu-entry
+  background-color: $menu-background-color
   cursor: pointer
-  background-color: #00B7FF
+  height: $menu-height
+  width: $menu-entry-width
   z-index: 3
-#pane
-  top: $menuHeight
+
+.app-canvas
+  top: $menu-height

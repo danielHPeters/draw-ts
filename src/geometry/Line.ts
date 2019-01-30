@@ -5,7 +5,7 @@ import Color from '../lib/util/Color'
 /**
  * Line shape to be drawn on a canvas element.
  *
- * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @author Daniel Peters
  * @version 1.0
  */
 export default class Line implements Shape {

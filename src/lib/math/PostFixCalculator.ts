@@ -1,7 +1,7 @@
 /**
  * Simple postfix calculator.
  *
- * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @author Daniel Peters
  * @version 1.0
  */
 export default class PostFixCalculator {
@@ -13,10 +13,11 @@ export default class PostFixCalculator {
    * @returns {number} The result
    */
   static calculate (expression: string): number {
-    let result = null
+    let result = NaN
+
     if (expression.match(PostFixCalculator.VALID_INPUT)) {
       let tokens = expression.split(' ')
-      let operation = []
+      let operation: any[] = []
 
       tokens.forEach(token => {
         if (isNaN(Number(token))) {

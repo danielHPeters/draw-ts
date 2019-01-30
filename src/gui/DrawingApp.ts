@@ -4,7 +4,7 @@ import { ToolID } from '../tools/ToolID'
 /**
  * Main application class.
  *
- * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @author Daniel Peters
  * @version 1.0
  */
 export default class DrawingApp {
@@ -29,7 +29,14 @@ export default class DrawingApp {
     this.canvas.height = window.innerHeight - this.menuBar.offsetHeight
     this.context = context
     this.toolBox = toolBox
-    this.activeTool = this.toolBox.get(ToolID.SHAPE)
+
+    const tool = this.toolBox.get(ToolID.SHAPE)
+
+    if (tool) {
+      this.activeTool = tool
+    } else {
+      throw new Error('Internal Error: Failed to start with default tool!')
+    }
   }
 
   /**

@@ -1,62 +1,67 @@
+html {
+  box-sizing: border-box; }
+
 * {
+  box-sizing: inherit;
   margin: 0;
   padding: 0; }
+  *::before, *::after {
+    box-sizing: inherit; }
 
 body {
-  padding: 50px;
-  font: 28px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font: 28px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  padding: 50px; }
 
 canvas {
-  position: absolute;
-  top: 0;
+  background: transparent;
   left: 0;
-  background: transparent; }
+  position: absolute;
+  top: 0; }
 
-#menuBar {
+.menu-bar {
+  background-color: #00b7ff;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  height: 40px;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 40px;
-  background-color: #00B7FF;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
-  #menuBar a {
-    width: 100%;
-    height: 40px;
+  width: 100%; }
+  .menu-bar a {
+    color: #fff;
     display: block;
+    height: 40px;
     text-decoration: none;
-    color: white; }
-  #menuBar a:hover {
-    color: black;
-    background-color: white; }
+    width: 100%; }
+    .menu-bar a:hover {
+      background-color: #fff;
+      color: #000; }
 
 .submenu {
+  cursor: pointer;
   display: inline-block;
-  width: 130px;
   text-align: center;
-  cursor: pointer; }
-
-.submenu:hover .submenu-content {
-  display: block; }
+  width: 130px; }
+  .submenu:hover .submenu-content {
+    display: block; }
 
 .submenu-content {
-  width: 130px;
-  position: absolute;
-  display: none;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  display: none;
+  position: absolute;
+  width: 130px;
   z-index: 1; }
 
 ul {
   list-style-type: none; }
 
-.menuEntry {
+.menu-entry {
+  background-color: #00b7ff;
+  cursor: pointer;
   height: 40px;
   width: 130px;
-  cursor: pointer;
-  background-color: #00B7FF;
   z-index: 3; }
 
-#pane {
+.app-canvas {
   top: 40px; }
 
 /*# sourceMappingURL=style.css.map */

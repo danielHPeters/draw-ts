@@ -5,7 +5,7 @@ const path = require('path')
 
 module.exports = {
   entry: {
-    draw: './src/app.ts',
+    app: './src/app.ts',
   },
   devtool: 'source-map',
   output: {

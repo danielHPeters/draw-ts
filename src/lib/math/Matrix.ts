@@ -1,13 +1,14 @@
 /**
  * Matrix class.
  *
- * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @author Daniel Peters
  * @version 1.0
  */
 export default class Matrix {
   rows: number
   columns: number
   mArray: number[][]
+  static readonly EMPTY = new Matrix([[]])
 
   /**
    * Default constructor.
@@ -23,11 +24,13 @@ export default class Matrix {
   set (array: number[][]): void {
     const length = array[0].length
     let valid = true
+
     for (let i = 1; i < array.length; i++) {
       if (array[i].length !== length) {
         valid = false
       }
     }
+
     if (valid) {
       this.rows = array.length
       this.columns = array[0].length
@@ -73,10 +76,11 @@ export default class Matrix {
    * Matrix multiplication algorithm.
    *
    * @param matrix Another matrix
-   * @returns Resulting matrix
+   * @returns Resulting matrix or empty matrix if not valid
    */
   multiply (matrix: Matrix): Matrix {
-    let newArray = []
+    let newArray: number[][] = []
+
     if (this.columns === matrix.rows) {
       for (let i = 0; i < this.rows; i++) {
         newArray[i] = []
@@ -89,7 +93,7 @@ export default class Matrix {
         }
       }
     } else {
-      return null
+      return Matrix.EMPTY
     }
     return new Matrix(newArray)
   }
@@ -111,7 +115,8 @@ export default class Matrix {
    * Transposes this matrix.
    */
   transpose (): void {
-    let array = []
+    let array: number[][] = []
+
     for (let i = 0; i < this.columns; i++) {
       array[i] = []
       for (let j = 0; j < this.rows; j++) {
@@ -149,7 +154,8 @@ export default class Matrix {
    * @returns A copy of this matrix
    */
   clone (): Matrix {
-    let array = []
+    let array: number[][] = []
+
     this.mArray.forEach(arr => array.push(arr.slice(0)))
     return new Matrix(Array.from(array))
   }

@@ -6,7 +6,7 @@ import Color from '../lib/util/Color'
 /**
  * Menu bar at the top of the web app.
  *
- * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @author Daniel Peters
  * @version 1.0
  */
 export default class MenuBar {
@@ -28,10 +28,8 @@ export default class MenuBar {
     menuLink.setAttribute('id', entryText.toLowerCase())
     menuLink.appendChild(document.createTextNode(entryText))
     menuEntry.appendChild(menuLink)
-    menuEntry.classList.add('menuEntry')
-    menuEntry.addEventListener('click', () => {
-      tool.undo(context, canvas.width, canvas.height)
-    })
+    menuEntry.classList.add('menu-entry')
+    menuEntry.addEventListener('click', () => tool.undo(context, canvas.width, canvas.height))
     editEntries.push(menuEntry)
     return editEntries
   }
@@ -47,10 +45,8 @@ export default class MenuBar {
       menuLink.setAttribute('id', color.toLowerCase())
       menuLink.appendChild(document.createTextNode(color))
       menuEntry.appendChild(menuLink)
-      menuEntry.classList.add('menuEntry')
-      menuEntry.addEventListener('click', () => {
-        settings.activeColor = Color[color.toUpperCase()]
-      })
+      menuEntry.classList.add('menu-entry')
+      menuEntry.addEventListener('click', () => settings.activeColor = Color[color.toUpperCase()])
       colorEntries.push(menuEntry)
     })
 
@@ -61,14 +57,14 @@ export default class MenuBar {
     colorInput.setAttribute('accept', Color.VALID_COLOR)
     colorInput.addEventListener('change', () => settings.activeColor = new Color(colorInput.value))
     colorForm.appendChild(colorInput)
-    colorForm.classList.add('menuEntry')
+    colorForm.classList.add('menu-entry')
     colorEntries.push(colorForm)
     return colorEntries
   }
 
-  static createShapesMenu (settings): HTMLElement[] {
+  static createShapesMenu (settings: Settings): HTMLElement[] {
     const tools = ['Line', 'Rectangle', 'Triangle', 'Circle', 'Smiley', 'Svg']
-    const toolEntries = []
+    const toolEntries: HTMLElement[] = []
 
     tools.forEach(shape => {
       const menuEntry = document.createElement('li') as HTMLElement
@@ -77,10 +73,8 @@ export default class MenuBar {
       menuLink.setAttribute('id', shape.toLowerCase())
       menuLink.appendChild(document.createTextNode(shape))
       menuEntry.appendChild(menuLink)
-      menuEntry.classList.add('menuEntry')
-      menuEntry.addEventListener('click', () => {
-        settings.activeTool = ShapeType[shape.toUpperCase()]
-      })
+      menuEntry.classList.add('menu-entry')
+      menuEntry.addEventListener('click', () => settings.activeTool = ShapeType[shape.toUpperCase()])
       toolEntries.push(menuEntry)
     })
     return toolEntries
@@ -96,7 +90,7 @@ export default class MenuBar {
     menuInput.setAttribute('id', entryText.toLowerCase())
     menuEntry.appendChild(document.createTextNode(entryText))
     menuEntry.appendChild(menuInput)
-    menuEntry.classList.add('menuEntry')
+    menuEntry.classList.add('menu-entry')
     menuEntry.addEventListener('click', () => {
       settings.fill = !settings.fill
       console.log(settings.fill)
