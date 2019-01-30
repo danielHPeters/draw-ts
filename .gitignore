@@ -114,6 +114,7 @@ dist/
 public/js/*.js
 public/stylesheets/*.css
 public/**/*.map
+!public/**/*.keep
 
 # Ignore vscode settings
 .vscode/
