@@ -32,7 +32,7 @@ const config = {
     def: 'default',
     lint: 'lint',
     run: 'run',
-    test: 'test:coverage',
+    test: 'test',
     watch: 'watch'
   }
 }
