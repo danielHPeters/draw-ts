@@ -32,7 +32,7 @@ const config = {
     def: 'default',
     lint: 'lint',
     run: 'run',
-    test: 'test',
+    test: 'test:coverage',
     watch: 'watch'
   }
 }
@@ -40,7 +40,7 @@ const config = {
 /**
  * Webpack compiles the js files in client folder into one js file.
  * Babel then translates the ES6+ syntax into javascript that all the latest 2 versions of the most popular browser
- * can understand. The configurations are in the 'webpack.config.js' and '.babelrc' files.
+ * can understand. The configurations are in the 'webpack.config.js' file.
  * After that, the js wil be minified.
  * Source maps are generated to allow source debugging in the consoles of most browsers.
  */

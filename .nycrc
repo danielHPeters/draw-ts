@@ -1,19 +1,22 @@
 {
   "check-coverage": true,
-  "per-file": true,
-  "lines": 0,
+  "cache": false,
+  "all": true,
+  "instrument": true,
   "statements": 0,
-  "functions": 0,
   "branches": 0,
+  "functions": 0,
+  "lines": 0,
+  "reporter": [
+    "text"
+  ],
   "include": [
     "src/**/*.ts"
   ],
+  "exclude": [
+    "src/**/*.spec.ts"
+  ],
   "extension": [
     ".ts"
-  ],
-  "require": [
-    "ts-node/register"
-  ],
-  "cache": false,
-  "all": true
+  ]
 }
