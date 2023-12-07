@@ -1,6 +1,5 @@
 'use strict'
 
-const { CheckerPlugin } = require('awesome-typescript-loader')
 const path = require('path')
 
 module.exports = {
@@ -18,18 +17,15 @@ module.exports = {
   },
   module: {
     rules: [
-      // all files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'
+      // all files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'
       {
         test: /\.tsx?$/,
-        loader: 'awesome-typescript-loader',
+        loader: 'ts-loader',
         exclude: [
           '/node_modules/',
           '/**/*.spec.ts'
         ]
       }
     ]
-  },
-  plugins: [
-    new CheckerPlugin()
-  ]
+  }
 }

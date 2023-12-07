@@ -11,11 +11,11 @@ import Color from '../lib/util/Color'
  */
 export default class MenuBar {
   private element: HTMLElement
-  private readonly submenus: HTMLElement[]
+  private readonly submenus: Record<string, HTMLElement>
 
   constructor (element: HTMLElement) {
     this.element = element
-    this.submenus = []
+    this.submenus = {}
   }
 
   static createEditMenu (settings: Settings, tool: Tool, context: CanvasRenderingContext2D, canvas: HTMLCanvasElement): HTMLElement[] {
@@ -46,7 +46,7 @@ export default class MenuBar {
       menuLink.appendChild(document.createTextNode(color))
       menuEntry.appendChild(menuLink)
       menuEntry.classList.add('menu-entry')
-      menuEntry.addEventListener('click', () => settings.activeColor = Color[color.toUpperCase()])
+      menuEntry.addEventListener('click', () => settings.activeColor = Color.getPredefinedColor(color.toUpperCase()))
       colorEntries.push(menuEntry)
     })
 
@@ -74,7 +74,7 @@ export default class MenuBar {
       menuLink.appendChild(document.createTextNode(shape))
       menuEntry.appendChild(menuLink)
       menuEntry.classList.add('menu-entry')
-      menuEntry.addEventListener('click', () => settings.activeTool = ShapeType[shape.toUpperCase()])
+      menuEntry.addEventListener('click', () => settings.activeTool = ShapeType[shape.toUpperCase() as keyof typeof ShapeType])
       toolEntries.push(menuEntry)
     })
     return toolEntries
@@ -132,7 +132,7 @@ export default class MenuBar {
    * @param title ID and title text of menu
    * @returns The menu element
    */
-  getMenu (title: string): HTMLElement {
+  getMenu (title: string): HTMLElement | null {
     return this.submenus.hasOwnProperty(title.toLowerCase()) ? this.submenus[title.toLowerCase()] : null
   }
 }

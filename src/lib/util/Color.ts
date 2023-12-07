@@ -5,11 +5,20 @@
  * @version 1.0
  */
 export default class Color {
-  static readonly RED = new Color('#FF0000')
-  static readonly GREEN = new Color('#00FF00')
-  static readonly BLUE = new Color('#0000FF')
-  static readonly YELLOW = new Color('#FFFF00')
-  static readonly BLACK = new Color('#000000')
+  static getPredefinedColor (colorName: string): Color {
+    if (colorName === 'RED') {
+      return new Color('#FF0000')
+    } else if (colorName === 'GREEN') {
+      return new Color('#00FF00')
+    } else if (colorName === 'BLUE') {
+      return new Color('#0000FF')
+    } else if (colorName === 'YELLOW') {
+      return new Color('#FFFF00')
+    } else {
+      return new Color('#000000')
+    }
+  }
+
   /**
    * Regex for verifying hex-color formats.
    * Valid formats are: #000 or #000000.

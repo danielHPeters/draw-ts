@@ -1,4 +1,4 @@
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/danielHPeters/draw-ts.svg?columns=all)](https://waffle.io/danielHPeters/draw-ts) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![Build Status](https://travis-ci.org/danielHPeters/draw-ts.svg?branch=master)](https://travis-ci.org/danielHPeters/draw-ts) [![Coverage Status](https://coveralls.io/repos/github/danielHPeters/draw-ts/badge.svg?branch=master)](https://coveralls.io/github/danielHPeters/draw-ts?branch=master)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![Build Status](https://travis-ci.org/danielHPeters/draw-ts.svg?branch=master)](https://travis-ci.org/danielHPeters/draw-ts) [![Coverage Status](https://coveralls.io/repos/github/danielHPeters/draw-ts/badge.svg?branch=master)](https://coveralls.io/github/danielHPeters/draw-ts?branch=master)
 
 # draw-ts
 HTML5 canvas drawing web application.

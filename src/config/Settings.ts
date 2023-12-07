@@ -20,7 +20,7 @@ export default class Settings {
    */
   constructor (
     public menuHeight: number,
-    public activeColor: Color = Color.BLACK,
+    public activeColor: Color = Color.getPredefinedColor('BLACK'),
     public activeTool: ShapeType = ShapeType.LINE,
     public history: Shape[] = [],
     public fill: boolean = false
